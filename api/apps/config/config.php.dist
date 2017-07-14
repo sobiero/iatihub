@@ -1,0 +1,56 @@
+<?php
+
+/**
+
+$ openssl genrsa -out id_rsa_jwt.pem 2048
+$ openssl rsa -in id_rsa_jwt.pem -pubout > id_rsa_jwt.pub
+
+**/
+
+
+$privKey = <<<EOD
+-----BEGIN RSA PRIVATE KEY-----
+private key here
+-----END RSA PRIVATE KEY-----
+EOD;
+
+$pubKey = <<<EOD
+-----BEGIN PUBLIC KEY-----
+public key here
+-----END PUBLIC KEY-----
+EOD;
+
+
+return [
+        'app' => [
+                'baseUri'         => '/simon/iatihub/api/',
+				'environment'     => 'development',
+				'jwt'             => [ 
+										'privKey'  =>  $privKey,
+										'pubKey'   =>  $pubKey,
+									 ],
+        ],
+        'db' => [
+                'adapter'  => 'Mysql',
+                'host'     => 'localhost',
+                'username' => 'username',
+                'password' => 'password',
+                'name'     => 'databasename',
+        ],
+		'modules' => [
+			'main' => [
+				'enabled' => true,
+				]
+		],
+		'mailer' => [
+		     
+			'default' => [
+				'driver'     => 'sendmail',
+				'sendmail'   => 'sendmail -bs',
+				'from'       => [
+					'email' => 'no-reply@example.org',
+					'name'  => ''
+				   ],
+			],
+		],
+];
