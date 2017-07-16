@@ -5,6 +5,11 @@ use Phalcon\Mvc\Micro\Collection;
 Error routes
 **/
 
+$method = $_SERVER['REQUEST_METHOD'];
+if($method == "OPTIONS") {
+	die();
+}
+
 $errors = new Collection();
 $errors->setHandler('\IatiHub\System\Controllers\ErrorController', true);
 $errors->setPrefix('/error');
@@ -21,8 +26,8 @@ Auth routes
 $auth = new Collection();
 $auth->setHandler('\IatiHub\System\Controllers\AuthController', true);
 $auth->setPrefix('/auth');
-$auth->get('/login',  'loginAction');
-$auth->get('/logout', 'logoutAction');
+$auth->post('/login',  'loginAction');
+$auth->post('/logout', 'logoutAction');
 
 $app->mount($auth);
 
