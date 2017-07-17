@@ -13,7 +13,6 @@ import Full from '@/containers/Full'
 import Dashboard from '@/views/Dashboard'
 import Myprofile from '@/views/Myprofile'
 
-
 // Views - Pages
 //Auth
 import Login from '@/views/pages/auth/Login'
@@ -26,8 +25,8 @@ import NotFoundComponent from '@/views/pages/NotFoundComponent'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash',
-  base: '/', //iatihub/dist/
+  mode: 'history',
+  base: '/', //simon/iatihub/dist/
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
@@ -50,7 +49,6 @@ export default new Router({
           beforeEnter: requireAuth,
           component: Myprofile
         }
-
       ]
     },
 	{

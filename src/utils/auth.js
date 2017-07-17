@@ -17,7 +17,7 @@ var router = new Router({
 });
 
 export function login(context, creds, redirect) {
-  axios.post('http://web.local.net/iatihub/api/auth/login', {
+  axios.post('/simon/iatihub/api/auth/login', {
     username: creds.username,
     password: creds.password
   })

@@ -1,8 +1,8 @@
 {
-  "name": "coreui-vue",
-  "version": "1.0.0-alpha.6",
-  "description": "Open Source Admin Template",
-  "author": "Łukasz Holeczek <lukasz@holeczek.pl>",
+  "name": "IATIHub",
+  "version": "0.0.1",
+  "description": "IATI Hub vuejs SPA",
+  "author": "Simon Obiero <obierosimon@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
