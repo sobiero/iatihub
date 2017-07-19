@@ -25,7 +25,7 @@ import NotFoundComponent from '@/views/pages/NotFoundComponent'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: '/', //simon/iatihub/dist/
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
